@@ -8,10 +8,10 @@ module.exports = (sequelize) => {
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Please provide a value for "title"',
+          msg: 'Please specify a value for "title"',
         },
         notEmpty: {
-          msg: 'Please provide a value for "title"',
+          msg: 'Please provide a non empty value for "title"',
         },
       },
     },
@@ -20,19 +20,20 @@ module.exports = (sequelize) => {
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Please provide a value for "title"',
+          msg: 'Please specify a value for "author"',
         },
         notEmpty: {
-          msg: 'Please provide a value for "title"',
+          msg: 'Please provide a non empty value for "author"',
         },
       },
     },
     genre: {
       type: Sequelize.STRING,
-    }
+    },
     year: {
       type: Sequelize.INTEGER,
-    }
-  });
-  return Book,
+    },
+  }, {sequelize}
+  );
+  return Book;
 }
